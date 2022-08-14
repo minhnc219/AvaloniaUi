@@ -1,0 +1,43 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="50">
+            <!-- Add Controls for Previewer Here -->
+            <StackPanel>
+                <Button Classes="Primary">Primary</Button>
+                <Button Classes="Danger">Danger</Button>
+                <Button Classes="Default">Default</Button>
+                <Button Classes="DangerOutline">Danger Outline</Button>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    <Style Selector="Button">
+        <Setter Property="Padding" Value="15 10"></Setter>
+        <Setter Property="Margin" Value="0 5"></Setter>
+    </Style>
+    <Style Selector="Button.Primary">
+        <Setter Property="Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="Background" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+
+    <Style Selector="Button.Default">
+        <Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource BlackSolidColorBrush}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource BlackSolidColorBrush}"></Setter>
+    </Style>
+
+    <Style Selector="Button.Danger">
+        <Setter Property="Background" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+    </Style>
+    <Style Selector="Button.DangerOutline">
+        <Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
+    </Style>
+</Styles>
