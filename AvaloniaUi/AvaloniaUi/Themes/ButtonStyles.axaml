@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:Projektanker.Icons.Avalonia;assembly=Projektanker.Icons.Avalonia">
     <Design.PreviewWith>
         <Border Padding="50">
             <!-- Add Controls for Previewer Here -->
@@ -8,15 +9,37 @@
                 <Button Classes="Danger">Danger</Button>
                 <Button Classes="Default">Default</Button>
                 <Button Classes="DangerOutline">Danger Outline</Button>
+                <Button Classes="PrimaryButtonIcon HoverPrimary">
+                    <i:Icon Value="fa-solid fa-magnifying-glass" />
+                </Button>
+                <Button Classes="OutlineButtonIcon HoverOutline">
+                    <i:Icon Value="fa-solid fa-magnifying-glass" />
+                </Button>
+                <Button Classes="PrimaryButtonWithIcon HoverPrimary">
+                    <StackPanel Orientation="Horizontal">
+                        <i:Icon Value="fa-solid fa-magnifying-glass" />
+                        <TextBlock>Search</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Classes="OutlineButtonWithIcon HoverOutline">
+                    <StackPanel Orientation="Horizontal">
+                        <i:Icon Value="fa-solid fa-magnifying-glass" />
+                        <TextBlock>Search</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Classes="SelectFolder" HorizontalAlignment="Stretch">
+                </Button>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
 
     <!-- Add Styles Here -->
+
     <Style Selector="Button">
-        <Setter Property="Padding" Value="15 10"></Setter>
-        <Setter Property="Margin" Value="0 5"></Setter>
+        <Setter Property="Padding" Value="{DynamicResource PaddingButtonText}"></Setter>
+        <Setter Property="Margin" Value="{DynamicResource MarginButtonText}"></Setter>
     </Style>
+
     <Style Selector="Button.Primary">
         <Setter Property="Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
@@ -26,8 +49,8 @@
     <Style Selector="Button.Default">
         <Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
         <Setter Property="Foreground" Value="{DynamicResource BlackSolidColorBrush}"></Setter>
-        <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="BorderBrush" Value="{StaticResource BlackSolidColorBrush}"></Setter>
+        <Setter Property="BorderThickness" Value="{DynamicResource BorderThicknessButton}"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource DefaultSolidColorBrush}"></Setter>
     </Style>
 
     <Style Selector="Button.Danger">
@@ -37,7 +60,92 @@
     <Style Selector="Button.DangerOutline">
         <Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
         <Setter Property="Foreground" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
-        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderThickness" Value="{DynamicResource BorderThicknessButton}"></Setter>
         <Setter Property="BorderBrush" Value="{DynamicResource DangerSolidColorBrush}"></Setter>
     </Style>
+    
+    <!--Hover Button-->
+
+	<Style Selector="Button.HoverOutline:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
+    </Style>
+    <Style Selector="Button.HoverPrimary:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverSolidColorBrush}"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHoverSolidColorBrush}"></Setter>
+    </Style>
+    <Style Selector="Button.HoverDanger:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource DangerHoverSolidColorBrush}"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource DangerHoverSolidColorBrush}"></Setter>
+    </Style>
+
+	<Style Selector="Button.PrimaryButtonIcon">
+		<Setter Property="Padding" Value="{DynamicResource PaddingButtonIcon}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
+		<Setter Property="Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+	</Style>
+
+	<Style Selector="Button i|Icon">
+		<Setter Property="FontSize" Value="16"></Setter>
+	</Style>
+
+	<Style Selector="Button.OutlineButtonIcon">
+		<Setter Property="Padding" Value="{DynamicResource PaddingButtonIcon}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+		<Setter Property="BorderBrush" Value="{DynamicResource DefaultSolidColorBrush}"></Setter>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThicknessButton}"></Setter>
+	</Style>
+
+	<Style Selector="Button.PrimaryButtonWithIcon">
+		<Setter Property="Padding" Value="{DynamicResource PaddingButtonWithIcon}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource PrimarySolidColorBrush}"></Setter>
+		<Setter Property="Foreground" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+	</Style>
+	<Style Selector="Button.PrimaryButtonWithIcon i|Icon">
+		<Setter Property="Margin" Value="0, 0, 5, 0"></Setter>
+	</Style>
+
+	<Style Selector="Button.OutlineButtonWithIcon">
+		<Setter Property="Padding" Value="{DynamicResource PaddingButtonWithIcon}"></Setter>
+		<Setter Property="Background" Value="{DynamicResource WhiteSolidColorBrush}"></Setter>
+		<Setter Property="BorderBrush" Value="{DynamicResource DefaultSolidColorBrush}"></Setter>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThicknessButton}"></Setter>
+	</Style>
+	<Style Selector="Button.OutlineButtonWithIcon i|Icon">
+		<Setter Property="Margin" Value="0, 0, 5, 0"></Setter>
+	</Style>
+
+	<Style Selector="Button.SelectFolder">
+		<Setter Property="Margin" Value="0"></Setter>
+		<Setter Property="Padding" Value="0"></Setter>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border
+                    BorderThickness="1"
+                    BorderBrush="{DynamicResource BlackSolidColorBrush}"
+                    CornerRadius="4">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="Auto"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<TextBlock VerticalAlignment="Center"
+                                   TextWrapping="WrapWithOverflow"
+                                   Padding="6.5"
+                                   Text="{TemplateBinding }"></TextBlock>
+						<Border Grid.Column="1"
+                                BorderThickness="1, 0, 0, 0"
+                                BorderBrush="{DynamicResource BlackSolidColorBrush}"
+                                Padding="6.5">
+							<i:Icon Value="fa-solid fa-folder" Grid.Column="1"
+                                    Foreground="{DynamicResource PrimarySolidColorBrush}"/>
+						</Border>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
 </Styles>

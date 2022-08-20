@@ -1,13 +1,30 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!-- Add Resources Here -->
-    <Color x:Key="WhiteColor">White</Color>
-    <Color x:Key="PrimaryColor">#40A9FF</Color>
-    <Color x:Key="DangerColor">#FF7875</Color>
-    <Color x:Key="BlackColor">Black</Color>
+	<x:Double x:Key="ProgressBarMinHeight">3</x:Double>
+    <x:Double x:Key="CheckBoxHeight">32</x:Double>
 
-    <SolidColorBrush x:Key="PrimarySolidColorBrush" Color="{DynamicResource PrimaryColor}"></SolidColorBrush>
+
+    <Thickness x:Key="PaddingButtonIcon">6</Thickness>
+    <Thickness x:Key="PaddingButtonText">15, 8</Thickness>
+    <Thickness x:Key="BorderThicknessButton">1</Thickness>
+    <Thickness x:Key="PaddingButtonWithIcon">10, 8</Thickness>
+    <Thickness x:Key="MarginButtonText">10, 5</Thickness>
+
+
+    <Color x:Key="WhiteColor">White</Color>
+    <Color x:Key="PrimaryColor">#1890FF</Color>
+    <Color x:Key="DangerColor">#FF4D4F</Color>
+    <Color x:Key="BlackColor">Black</Color>
+    <Color x:Key="DefaultColor">#D9D9D9</Color>
+    <Color x:Key="PrimaryColorHover">#40A9FF</Color>
+    <Color x:Key="DangerColorHover">#FF7875</Color>
+
+	<SolidColorBrush x:Key="PrimarySolidColorBrush" Color="{DynamicResource PrimaryColor}"></SolidColorBrush>
     <SolidColorBrush x:Key="WhiteSolidColorBrush" Color="{DynamicResource WhiteColor}"></SolidColorBrush>
     <SolidColorBrush x:Key="DangerSolidColorBrush" Color="{DynamicResource DangerColor}"></SolidColorBrush>
     <SolidColorBrush x:Key="BlackSolidColorBrush" Color="{DynamicResource BlackColor}"></SolidColorBrush>
+    <SolidColorBrush x:Key="DefaultSolidColorBrush" Color="{DynamicResource DefaultColor}"></SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryHoverSolidColorBrush" Color="{DynamicResource PrimaryColorHover}"></SolidColorBrush>
+    <SolidColorBrush x:Key="DangerHoverSolidColorBrush" Color="{DynamicResource DangerColorHover}"></SolidColorBrush>
 </ResourceDictionary>
